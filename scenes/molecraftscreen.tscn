@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cakxadd40kd8d"]
+
+[ext_resource type="Script" uid="uid://c8r805ixjj51e" path="res://scripts/molecraftscreen.gd" id="1_5cdwk"]
+[ext_resource type="Texture2D" uid="uid://gummjvrita66" path="res://assets/brackeys_platformer_assets/sprites/ChatGPT Image Oct 18, 2025, 09_11_17 PM.png" id="1_60yg8"]
+[ext_resource type="FontFile" uid="uid://cgsceqsdupl6n" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_60yg8"]
+
+[node name="molecraftscreen" type="Sprite2D"]
+z_index = 100
+texture = ExtResource("1_60yg8")
+script = ExtResource("1_5cdwk")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+z_index = 110
+offset_left = -492.0
+offset_top = 188.0
+offset_right = 546.0
+offset_bottom = 410.0
+theme_override_fonts/font = ExtResource("2_60yg8")
+theme_override_font_sizes/font_size = 48
+text = "1. mine Au, Ag, and Cu
+2. avoid the Radium monster
+3. make to the end"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
